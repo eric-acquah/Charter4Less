@@ -1,0 +1,49 @@
+/* ====== Hero Section ======= */
+
+.hero-section {
+    margin: 0;
+}
+
+/* ====== Hero Container ======= */
+.hero-container {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    background-color: skyblue;
+    /* height: 70%; */
+}
+
+
+/* ====== Content Row ====== */
+
+/* .content-row {
+    height: 90%;
+} */
+
+
+/* ======= Col ======== */
+
+/* .img-col .text-col {
+
+} */
+
+.img-col {
+    display: flex;
+    justify-content: end;
+}
+
+.text-col {
+    margin-top: 7rem;
+}
+
+.text-col p{
+    margin-top: 2rem;
+}
+
+/* ===== Search Box ====== */
+
+.searchbox-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
