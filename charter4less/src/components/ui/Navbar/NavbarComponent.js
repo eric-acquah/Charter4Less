@@ -7,14 +7,18 @@ import {
   Button,
   InputGroup,
 } from "react-bootstrap";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import logo from "../../../assets/images/logo-1.png";
 import search from "../../../assets/images/search-icon.png";
 import "./NavbarComponent.css";
 
 export default function NavbarComponent() {
   return (
-    <Navbar fixed="top"  expand="lg" className="navbar d-flex justify-content-between">
+    <Navbar
+      fixed="top"
+      expand="lg"
+      className="navbar d-flex justify-content-between"
+    >
       <Navbar.Brand href="#home">
         <img
           style={{
@@ -28,7 +32,7 @@ export default function NavbarComponent() {
         />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Row >
+      <Row>
         <Navbar.Collapse id="basic-navbar-nav">
           <Row>
             <Col xs md="auto">
@@ -47,21 +51,34 @@ export default function NavbarComponent() {
                     <img
                       src={search}
                       alt="search-icon"
-                      style={{cursor: "pointer"}}
+                      style={{ cursor: "pointer" }}
                       width="20px"
                     />
                   </InputGroup.Text>
                 </InputGroup>
               </Form>
             </Col>
-            <Col style={{marginRight: "1rem"}} xs md="auto" className="d-flex align-items-center">
-              <Nav className="mr-auto" style={{marginRight: "1rem"}}>
-                <Nav.Link className="navlink" href="#home">How it works</Nav.Link>
+            <Col
+              style={{ marginRight: "1rem" }}
+              xs
+              md="auto"
+              className="d-flex align-items-center"
+            >
+              <Nav className="mr-auto" style={{ marginRight: "1rem" }}>
+                <Nav.Link className="navlink" href="#home">
+                  How it works
+                </Nav.Link>
               </Nav>
-              <Button style={{marginRight: "7px"}} className="btn-action" variant="outline-primary">
+              <Button
+                style={{ marginRight: "7px" }}
+                className="btn-action"
+                variant="outline-primary"
+              >
                 Log In
               </Button>
-              <Button className="btn-action" variant="primary">Sign Up</Button>
+              <Button className="btn-action" variant="primary">
+                Sign Up
+              </Button>
             </Col>
           </Row>
         </Navbar.Collapse>

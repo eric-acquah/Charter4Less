@@ -1,0 +1,63 @@
+/* ===== Footer ====== */
+.footer {
+  background-color: #FDE49E;
+  border-top: 1px solid #DD761C;
+}
+
+
+/* ===== Container ===== */
+
+.footer-container {
+    padding-top: 4rem;
+}
+
+/* ====== Footer Heading ====== */
+
+.footer-heading {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    /* text-align: center; */
+}
+
+/* ==== Footer Logo ==== */
+
+.footer-logo {
+    width: 14rem;
+    object-fit: contain;
+    margin: 1rem;
+}
+
+
+/* ===== Footer Socails ====== */
+
+.hr-rule {
+    margin-top: 3rem;
+}
+
+.copyright-social{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ 
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    /* height: 2rem; */
+}
+
+.social-icons .icons {
+    margin-left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.footer-email {
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
