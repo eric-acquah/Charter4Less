@@ -9,17 +9,11 @@ import { ReactComponent as Twitter } from "../../../assets/icons/icons8-twitterx
 import { ReactComponent as Linkedin } from "../../../assets/icons/icons8-linkedin.svg";
 
 function FooterHeader({ text }) {
-  return (
-    <h3 className="footer-heading">{text}</h3>
-  )
+  return <h3 className="footer-heading">{text}</h3>;
 }
 
 function Copyright() {
-  return (
-    <p>
-      Copyright &#169;{getYear()} All rights reserved
-    </p>
-  )
+  return <p>Copyright &#169;{getYear()} All rights reserved</p>;
 }
 
 function SocialMedia() {
@@ -30,7 +24,7 @@ function SocialMedia() {
       <Twitter className="icons" />
       <Linkedin className="icons" />
     </div>
-  )
+  );
 }
 
 export default function FooterComponent() {
@@ -40,38 +34,51 @@ export default function FooterComponent() {
         <Row>
           <Col>
             <FooterHeader text="About Us" />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus placerat laoreet. Nunc pretium et magna eu interdum. Duis risus odio, malesuada vel ullamcorper non, luctus at nisl. Morbi facilisis fermentum risus. Fusce fermentum erat 
-          <img src={logo} alt="logo" className="footer-logo" />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+            maximus placerat laoreet. Nunc pretium et magna eu interdum. Duis
+            risus odio, malesuada vel ullamcorper non, luctus at nisl. Morbi
+            facilisis fermentum risus. Fusce fermentum erat
+            <img src={logo} alt="logo" className="footer-logo" />
           </Col>
           <Col>
             <FooterHeader text="Contact Info" />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus placerat laoreet. Nunc pretium et magna eu interdum. Duis risus odio, malesuada vel ullamcorper non, luctus at nisl.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+            maximus placerat laoreet. Nunc pretium et magna eu interdum. Duis
+            risus odio, malesuada vel ullamcorper non, luctus at nisl.
           </Col>
           <Col>
-            <FooterHeader text="Address" />malesuada vel ullamcorper non, luctus at nisl. Morbi facilisis fermentum risus. Fusce fermentum erat elementum, auctor ligula a, cursus diam. Nullam volutpat mi velit. Proin ut euismod orci.
+            <FooterHeader text="Address" />
+            malesuada vel ullamcorper non, luctus at nisl. Morbi facilisis
+            fermentum risus. Fusce fermentum erat elementum, auctor ligula a,
+            cursus diam. Nullam volutpat mi velit. Proin ut euismod orci.
           </Col>
           <Col>
             <FooterHeader text="Newsletter" />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus placerat laoreet. Nunc pretium et magna eu interdum. Duis risus odio, malesuada vel ullamcorper 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+            maximus placerat laoreet. Nunc pretium et magna eu interdum. Duis
+            risus odio, malesuada vel ullamcorper
             <Form className="footer-email">
               <Form.Control placeholder="Email" />
             </Form>
           </Col>
-          <hr className="hr-rule" style={{
-            color: "#0C0C0C",
-            backgroundColor: "#0C0C0C",
-            height: "2px",
-          }}/>
+          <hr
+            className="hr-rule"
+            style={{
+              color: "#0C0C0C",
+              backgroundColor: "#0C0C0C",
+              height: "2px",
+            }}
+          />
           <Row className="copyright-social">
-          <Col>
-            <Copyright />
-          </Col>
-          <Col className="social-icons">
-            <SocialMedia />
-          </Col>
+            <Col>
+              <Copyright />
+            </Col>
+            <Col className="social-icons">
+              <SocialMedia />
+            </Col>
           </Row>
         </Row>
       </Container>
     </footer>
-)
+  );
 }
