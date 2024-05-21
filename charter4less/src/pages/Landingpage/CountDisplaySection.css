@@ -1,0 +1,27 @@
+/* ===== Count Section ===== */
+
+.count-container {
+    background-color: var(--color-prime-2);
+    margin-bottom: 4rem;
+}
+
+.count-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem;
+}
+
+.count-row h3{
+    color: var(--color-accent-3);
+    font-size: 5rem;
+    font-weight: 500;
+}
+
+.count-row p {
+    color: var(--color-secon);
+    color: var(--color-accent-2);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
