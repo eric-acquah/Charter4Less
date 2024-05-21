@@ -1,3 +1,4 @@
+
 /* ====== Hero Section ======= */
 
 .hero-section {
@@ -8,7 +9,7 @@
 .hero-container {
     margin-top: 5rem;
     margin-bottom: 5rem;
-    background-color: skyblue;
+    /* background-color: skyblue; */
     /* height: 70%; */
 }
 
@@ -32,11 +33,20 @@
 }
 
 .text-col {
+    display: flex;
+    flex-direction: column;
     margin-top: 7rem;
 }
 
 .text-col p{
     margin-top: 2rem;
+    font-size: 1.15rem;
+    font-weight: 400;
+}
+
+.text-col h1{
+    font-size: 3.5rem;
+    font-weight: 700;
 }
 
 /* ===== Search Box ====== */
@@ -46,4 +56,29 @@
     justify-content: center;
     margin-top: 4rem;
     margin-bottom: 4rem;
+}
+
+
+/* ====== Buttons ====== */
+
+.btn.action {
+    /* align-self: flex-end; */
+    margin-top: 1rem;
+    margin-right: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: #DD761C;
+    border: 1px solid #DD761C;
+    color: white;
+    /* border: none; */
+    cursor: pointer;
+    width: 30%;
+}
+
+.btn.action:active {
+    background-color: white;
+    color: #DD761C ;
+    border: 1px solid #DD761C;
 }
