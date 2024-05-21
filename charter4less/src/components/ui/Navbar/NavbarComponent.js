@@ -9,7 +9,8 @@ import {
 } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
 import logo from "../../../assets/images/logo-1.png";
-import search from "../../../assets/images/search-icon.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import "./NavbarComponent.css";
 
 export default function NavbarComponent() {
@@ -48,12 +49,7 @@ export default function NavbarComponent() {
                     aria-describedby="basic-addon1"
                   />
                   <InputGroup.Text>
-                    <img
-                      src={search}
-                      alt="search-icon"
-                      style={{ cursor: "pointer" }}
-                      width="20px"
-                    />
+                    <FontAwesomeIcon className="icon" name="search" style={{height: "1rem", cursor: "pointer"}} icon={faSearch} />
                   </InputGroup.Text>
                 </InputGroup>
               </Form>

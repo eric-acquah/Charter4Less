@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import './HeroSection.css';
 import SearchboxComponent from "../../components/ui/SearchboxComponent";
+import heroImage from "../../assets/images/hero-image-8.jpg";
 
 
 export default function HeroSection() {
@@ -15,7 +16,7 @@ export default function HeroSection() {
             <Button className="btn action" variant="primary">Rent Item</Button>
           </Col>
           <Col className="img-col" md={6}>
-            <img src="https://via.placeholder.com/500" alt="Charter Bus" />
+            <img src={heroImage} alt="Charter Bus" />
           </Col>
         </Row>
         <Row>
