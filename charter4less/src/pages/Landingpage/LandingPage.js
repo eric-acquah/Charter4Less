@@ -4,6 +4,7 @@ import Header from '../../components/ui/Header/Header';
 import FooterComponent from '../../components/ui/Footer/FooterComponent';
 import CountDisplaySection from './CountDisplaySection';
 import './Landingpage.css'
+import ExploreCategorySection from './ExploreCategorySection';
 
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,6 +16,7 @@ export default function LandingPage() {
       <Header />
       <HeroSection />
       <CountDisplaySection totalCount={[200, 5000]} />
+      <ExploreCategorySection />
       <FooterComponent />
     </main>
   )
