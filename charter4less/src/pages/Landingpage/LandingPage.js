@@ -6,6 +6,8 @@ import CountDisplaySection from './CountDisplaySection';
 import './Landingpage.css'
 import ExploreCategorySection from './ExploreCategorySection';
 import AboutUsSection from './AboutUsSection';
+import ReviewSection from './ReviewSection';
+import FeedBackSection from './FeedBackSection';
 
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,6 +21,8 @@ export default function LandingPage() {
       <CountDisplaySection totalCount={[200, 5000]} />
       <ExploreCategorySection />
       <AboutUsSection />
+      <ReviewSection />
+      <FeedBackSection />
       <FooterComponent />
     </main>
   )
