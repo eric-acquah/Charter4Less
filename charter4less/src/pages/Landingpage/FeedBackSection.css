@@ -1,0 +1,58 @@
+/* === Feedback Section === */
+
+.feedback-section {
+    padding: 4rem 1rem;
+    margin: 5rem 0;
+    /* background-color: #008080; */
+    margin-bottom: 8rem;
+}
+
+
+/* === Feedback Container === */
+
+.feedback-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* === Form Container === */
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 0 0 4rem;
+}
+
+
+/* .feedback-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+} */
+
+.form-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.form-footer small {
+    font-style: italic;
+}
+
+/* === Form Btn */
+
+.form-btn {
+    background-color: var(--color-accent-1);
+    border: 1px solid var(--color-accent-3);
+}
+
+.form-btn:hover {
+    background-color: var(--color-accent-3);
+    color: var(--color-accent-1);
+    color: var(--color-prime);
+    border: 1px solid var(--color-accent-1);
+}
