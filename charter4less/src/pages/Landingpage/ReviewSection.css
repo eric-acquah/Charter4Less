@@ -1,0 +1,76 @@
+
+
+/* === Review Section === */
+
+.review-section {
+    padding: 4rem 1rem;
+    background: var(--color-prime-2);
+    background-color: var(--color-accent-1);
+    background: rgb(221,118,28);
+    background: linear-gradient(236deg, rgba(221,118,28,0.9836309523809523) 89%, rgba(245,222,179,1) 100%);
+}
+
+/* === Review Card === */
+
+.review-card-container {
+    border: 2px solid var(--color-prime-2);
+}
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.review-card hr {
+    margin: 10px 6px;
+
+}
+
+.reviewer-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-accent-3);
+    text-align: center;
+    margin: 0.5rem 0;
+
+}
+
+/* === Review Img === */
+
+.reviewer-img {
+    width: 7.5rem;
+    /* height: 100px; */
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 5px solid var(--color-accent-1);
+}
+
+/* === Review Stars === */
+
+.review-stars{
+    display: flex;
+    justify-content: start;
+    margin: 0.5rem 0 0.5rem 0.5rem;
+}
+
+/* === Review Title === */
+
+.review-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-accent-3);
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+
+/* === Reviews === */
+
+.reviewer-msg {
+    /* font-size: 1.2rem; */
+    font-weight: 400;
+    color: var(--color-accent-3);
+    text-align: center;
+    /* margin: 1rem 0; */
+}
