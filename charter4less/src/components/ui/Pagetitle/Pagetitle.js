@@ -18,7 +18,7 @@ export default function Pagetitle() {
       <Container fluid className="breadcrumb-container">  {/* New class for styling */}
         <Row>
           <Col>
-            <Breadcrumb>
+            <Breadcrumb className='breadcrumbs'>
               <Breadcrumb.Item href="#">Tab 1</Breadcrumb.Item>
               <Breadcrumb.Item href="#">Tab 2</Breadcrumb.Item>
               <Breadcrumb.Item href="#">Tab 3</Breadcrumb.Item>

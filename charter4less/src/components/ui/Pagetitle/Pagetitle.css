@@ -7,6 +7,8 @@
   padding: 3rem 3rem;
   padding-bottom: 1.5rem;
   width: 100%;
+  margin: 5rem 0;
+  background-color: var(--color-secon-2);
 }
 
 /* =====Container===== */
@@ -44,4 +46,19 @@
   width: 20%;
   margin-bottom: 0;
   font-size: 1.2rem;
+}
+
+
+/* === Breadcrumbs === */
+
+.breadcrumbs [href] {
+  display: flex;
+  color: var(--color-accent-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumbs [href]:hover {
+  color: var(--color-accent-1);
 }
