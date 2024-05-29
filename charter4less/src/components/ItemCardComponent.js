@@ -139,7 +139,6 @@ export default function ItemCardComponent({ cardData = [] }) {
           </Col>
         )}
       </Row>
-      <Container style={{ marginBottom: "20rem" }}></Container>
     </div>
   );
 }
