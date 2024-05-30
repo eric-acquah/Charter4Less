@@ -1,3 +1,11 @@
+/* === How it works section === */
+
+.how-it-works-section {
+  min-height: 100vh; /* Sets the minimum height of the section to 100% of the viewport height */
+}
+
+
+
 /* Center the nav-tabs using flexbox */
 .nav-tabs {
   display: flex;
@@ -8,6 +16,8 @@
 /* Additional styling for the nav items if needed */
 .nav-tabs .nav-item {
   margin: 0 10px; /* Adds some space between the nav items */
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 
@@ -21,9 +31,12 @@
 
 /* Style for the main HowItWorks container */
 .howitworks-container {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
   background-color: #fff; /* White background for contrast */
   border-radius: 8px;
+  border-top: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   color: black; /* Black color for container text */
@@ -36,9 +49,9 @@
 }
 
 /* Style for the fixed position button at the bottom */
-.button {
-  position: fixed;
-  bottom: 10px;
+.how-it-works-btn.button {
+  position: relative;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   background-color: black; /* Black background color for the button */
@@ -49,8 +62,28 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 12%;
+  border: 1px solid var(--color-accent-3);
 }
 
-.button:hover {
-  background-color: #333; /* Dark gray background color on hover */
+.how-it-works-btn.button:hover {
+  background-color: #131212; /* Dark gray background color on hover */
+}
+
+.how-it-works-btn.button:active {
+  background-color: var(--color-prime);
+  color: var(--color-accent-3);
+  border: 1px solid var(--color-accent-3);
+}
+
+.nav-link-btn {
+  color: var(--color-accent-3); /* Accent color for active nav link */
+}
+
+.nav-link-btn:hover {
+  color: var(--color-accent-3); /* Accent color for hover state */
+}
+
+.nav-link.nav-link-btn.active{
+  color: var(--color-accent-2); 
 }
