@@ -6,10 +6,10 @@ export default function AboutUs() {
     return (
         <div>
             <Container>
-                 {/* Row for Card 1 and Card 2 */}
-                 <Row>
-                    <Col md={6}>
-                        <Card style={{ width: '18rem' }}>
+                {/* Row for Card 1 and Card 2 */}
+                <Row>
+                    <Col md={6} className="card-col-1">
+                        <Card className="card-1" style={{ width: '25rem', height: '15rem' }}>
                             <Card.Img variant="top" src="holder.js/100px180" />
                             <Card.Body>
                                 <Card.Title>Card Title 1</Card.Title>
@@ -21,8 +21,8 @@ export default function AboutUs() {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col md={6}>
-                        <Card style={{ width: '18rem' }}>
+                    <Col md={6} className="card-col-2">
+                        <Card className="card-2" style={{ width: '25rem', height: '15rem' }}>
                             <Card.Img variant="top" src="holder.js/100px180" />
                             <Card.Body>
                                 <Card.Title>Card Title 2</Card.Title>
@@ -37,8 +37,8 @@ export default function AboutUs() {
                 </Row>
                 {/* Row for Card 3 */}
                 <Row className="justify-content-md-center">
-                    <Col md={4}>
-                        <Card style={{ width: '18rem' }}>
+                    <Col md={4} className="card-col-3">
+                        <Card className="card-3" style={{ width: '25rem', height: '15rem' }}>
                             <Card.Img variant="top" src="holder.js/100px180" />
                             <Card.Body>
                                 <Card.Title>Card Title 3</Card.Title>

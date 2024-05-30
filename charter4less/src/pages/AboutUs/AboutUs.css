@@ -1,21 +1,24 @@
 /* AboutUs.css */
 
-/* Ensures the cards have a minimum height */
-.custom-card {
-    min-height: 25rem; /* Adjust this value as needed */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+/* General styles for all cards */
+.card-col-1, .card-col-2, .card-col-3 {
+    margin-bottom: 20px; /* Adds spacing between rows */
 }
 
-.custom-card .card-img-top {
-    height: 180px; /* This value can be adjusted */
-    object-fit: cover; /* Ensures the image covers the specified area */
+.card-1 {
+    /* Styles specific to Card 1 */
+    background-color: #f8f9fa; /* Light grey background */
+    height: 18rem; /* Adjust height */
 }
 
-.custom-card .card-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.card-2 {
+    /* Styles specific to Card 2 */
+    background-color: #e9ecef; /* Slightly darker grey background */
+    height: 18rem; /* Adjust height */
+}
+
+.card-3 {
+    /* Styles specific to Card 3 */
+    background-color: #dee2e6; /* Another shade of grey */
+    height: 18rem; /* Adjust height */
 }
