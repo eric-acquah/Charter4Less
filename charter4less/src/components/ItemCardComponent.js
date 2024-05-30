@@ -82,7 +82,7 @@ function CardImage({ imgList = [] }) {
 export default function ItemCardComponent({ cardData = [] }) {
   return (
     <div>
-      <Row xs={1} md={3} lg={4} className="g-4 card-row-wrapper">
+      <Row xs={1} md={2} lg={3} className="g-4 card-row-wrapper">
         {cardData.length > 0 ? (
           cardData.map((card, index) => {
             return (

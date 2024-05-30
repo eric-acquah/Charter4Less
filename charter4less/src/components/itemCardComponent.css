@@ -16,6 +16,11 @@
 
 }
 
+.card-row-wrapper>* {
+    margin: 0 0 1rem 0;
+
+}
+
 .card-main {
     width: 18rem;
     border-color: var(--color-prime);
