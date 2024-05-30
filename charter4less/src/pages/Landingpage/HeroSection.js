@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import './HeroSection.css';
-import SearchboxComponent from "../../components/ui/SearchboxComponent";
+import SearchboxComponent from "../../components/SearchboxComponent";
 import heroImage from "../../assets/images/hero-image-8.jpg";
 
 
