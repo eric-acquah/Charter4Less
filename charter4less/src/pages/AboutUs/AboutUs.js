@@ -5,7 +5,7 @@ import { Card, Col, Row, Button, Container } from 'react-bootstrap';
 export default function AboutUs() {
     return (
         <div>
-            <Container>
+            <Container className="about-us-container">
                 {/* Row for Card 1 and Card 2 */}
                 <Row>
                     <Col md={6} className="card-col-1">
