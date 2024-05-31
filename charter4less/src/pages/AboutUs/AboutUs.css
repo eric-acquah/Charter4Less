@@ -18,12 +18,20 @@
     margin-top: 5rem;
 }
 
+.card-title-1 {
+    margin-left: 3rem;
+}
+
 .card-2 {
     /* Styles specific to Card 2 */
     background-color: #e9ecef; /* Slightly darker grey background */
     height: 18rem; /* Adjust height */
     margin-left: 16rem;
     margin-top: 5rem;
+}
+
+.card-title-2 {
+    margin-left: 6rem;
 }
 
 .card-3 {
@@ -34,6 +42,10 @@
     margin-top: 10rem; /* Adjust this value to move the card up or down */
     left: 50%; /* Adjust this value to move the card left or right */
     transform: translate(-50%, -50%); /* Center the card */
+}
+
+.card-title-3 {
+    margin-left: 6rem;
 }
 
 /* Adjust the card-3 position to be between card-1 and card-2 */
