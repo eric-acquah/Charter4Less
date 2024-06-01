@@ -64,7 +64,7 @@ const reviewsData = [
   },
 ];
 
-function ReviewStars({ starCount = 1 }) {
+export function ReviewStars({ starCount = 1 }) {
   return (
     <>
       {Array(starCount)
