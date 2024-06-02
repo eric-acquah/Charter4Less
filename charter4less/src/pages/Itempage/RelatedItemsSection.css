@@ -1,0 +1,39 @@
+/* === Related Item Section === */
+
+.related-items-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+    justify-content: center;
+    border: 1px solid lightgray;
+    padding: 2rem;
+    padding-bottom: 0;
+    margin-bottom: 3rem;
+}
+
+.related-items-col1 {
+    display: flex;
+    justify-content: center;
+}
+
+.related-items-col1 h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.related-items-col2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    /* border: 1px solid lightgray; */
+    /* height: 40%; */
+    padding: 1.5rem;
+    width: 80%;
+}
+
+.related-items-col2 .card-main{
+    height: 80%;
+    min-height: 75%;
+}

@@ -156,9 +156,8 @@
     object-fit: cover;
 }
 
-.carousel-control-next-icon {
-    /* background-color: blueviolet; */
-    color: yellow;
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 1));
 }
 
 .review-txt-sec {
