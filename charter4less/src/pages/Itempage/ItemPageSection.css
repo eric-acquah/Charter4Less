@@ -156,6 +156,11 @@
     object-fit: cover;
 }
 
+.carousel-control-next-icon {
+    /* background-color: blueviolet; */
+    color: yellow;
+}
+
 .review-txt-sec {
     /* margin-top: 1rem; */
     padding: 20px;
@@ -194,4 +199,102 @@
     border-radius: var(--item-box-border);
     background-color: #f5f5f5;
     top: 7rem;
+}
+
+.item-name-price {
+    /* height: 30%; */
+}
+
+
+.item-price-tag {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 0.5rem;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--color-prime);
+    color: var(--color-accent-2);
+}
+
+.item-price-tag span {
+    /* font-size: 1.5rem; */
+    font-weight: 400;
+    color: gray;
+}
+
+.profile-wrapper {
+    /* height: 70%; */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-prime);
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 11px;
+}
+
+.owner-profile-bio {
+    width: 80%;
+}
+
+.owner-profile-bio h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.owner-profile-bio h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--color-accent-3);
+
+}
+
+.owner-profile-bio h3 span:first-child {
+    color: var(--color-accent-1);
+    font-size: 1.05rem;
+}
+
+.owner-profile-bio p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-accent-3);
+    color: gray;
+    padding-top: 10px;
+}
+
+.owner-profile-pic {
+    width: 20%;
+    display: grid;
+    position: relative;
+}
+
+.owner-profile-pic img {
+    width: 150%;
+    /* height: 100%; */
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: -7rem;
+    left: -4rem;
+    border: 1px solid var(--color-accent-1);
+    /* border: 2px solid lightgray; */
+}
+
+.owner-profile-pic span {
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
+.owner-profile-pic span {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.owner-profile-pic span>* {
+    font-size: 1.2rem;
+    color: var(--color-accent-1);
+    cursor: pointer;
 }
