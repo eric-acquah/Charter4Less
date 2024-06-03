@@ -31,7 +31,7 @@
 
 /* =====page-heading===== */
 .page-heading{
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight:700;
   padding: 0;
 }
@@ -51,7 +51,7 @@
 
 /* === Breadcrumbs === */
 
-.breadcrumbs [href] {
+.breadcrumbs a {
   display: flex;
   color: var(--color-accent-3);
   list-style: none;
@@ -61,4 +61,11 @@
 
 .breadcrumbs [href]:hover {
   color: var(--color-accent-1);
+  /* text-decoration: underline; */
+}
+
+.breadcrumb-item.activeCrumb {
+  /* color: var(--color-accent-1);
+  color: var(--color-prime-2); */
+  text-decoration: underline;
 }
