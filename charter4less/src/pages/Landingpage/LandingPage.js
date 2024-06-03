@@ -8,6 +8,7 @@ import ExploreCategorySection from './ExploreCategorySection';
 import AboutUsSection from './AboutUsSection';
 import ReviewSection from './ReviewSection';
 import FeedBackSection from './FeedBackSection';
+import NavbarComponent from '../../components/ui/Navbar/NavbarComponent';
 
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,7 +17,8 @@ import FeedBackSection from './FeedBackSection';
 export default function LandingPage() {
   return (
     <main>
-      <Header />
+      {/* <Header /> */}
+      <NavbarComponent />
       <HeroSection />
       <CountDisplaySection totalCount={[200, 5000]} />
       <ExploreCategorySection />

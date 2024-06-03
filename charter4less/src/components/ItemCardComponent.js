@@ -8,6 +8,7 @@ import {
   faCircleArrowRight,
   faCircleArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 import ImgPlaceholder from "../assets/images/explore-image.jpeg";
 
@@ -89,6 +90,7 @@ export default function ItemCardComponent({ cardData = [] }) {
               <Col key={index}>
                 <Card className="card-main">
                   <CardImage imgList={card.imgList} />
+                  <Link to="/item">
                   <Card.Body className="card-body">
                     <Card.Title className="card-text-title">
                       {card.title}
@@ -110,6 +112,7 @@ export default function ItemCardComponent({ cardData = [] }) {
                       ${card.price}/day
                     </Card.Text>
                   </Card.Body>
+                  </Link>
                 </Card>
               </Col>
             );

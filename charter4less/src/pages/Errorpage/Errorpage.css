@@ -1,0 +1,22 @@
+/* === Error Page === */
+
+.error-page {
+    min-height: 70vh;
+    background: var(--color-prime);
+}
+
+.error-msg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* top: 8rem; */
+    width: 100%;
+}
+
+.error-img {
+    width: 100%;
+    max-width: 50%;
+    /* margin-bottom: 2rem; */
+}

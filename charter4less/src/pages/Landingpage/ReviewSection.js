@@ -64,7 +64,7 @@ const reviewsData = [
   },
 ];
 
-function ReviewStars({ starCount = 1 }) {
+export function ReviewStars({ starCount = 1 }) {
   return (
     <>
       {Array(starCount)
@@ -89,6 +89,7 @@ function ReviewCard({ reviewsData = [] }) {
       spaceBetween={120}
       centeredSlides={true}
       loop={true}
+      navigation={true}
       pagination={{ clickable: true }}
       modules={[Navigation, Pagination]}
       className="reviewSwiper"

@@ -11,6 +11,7 @@ import { Row, Col } from "react-bootstrap";
 import logo from "../../../assets/images/logo-1.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
 import "./NavbarComponent.css";
 
 export default function NavbarComponent() {
@@ -20,18 +21,18 @@ export default function NavbarComponent() {
       expand="lg"
       className="navbar d-flex justify-content-between"
     >
-      <Navbar.Brand href="#home">
-        <img
-          style={{
-            marginLeft: "1rem",
-            marginBottom: "0.5rem",
-            objectFit: "contain",
-            width: "40%",
-          }}
-          src={logo}
-          alt="Logo"
-        />
-      </Navbar.Brand>
+      <Link to="/">
+      <img
+            style={{
+              marginLeft: "1rem",
+              marginBottom: "0.5rem",
+              objectFit: "contain",
+              width: "40%",
+            }}
+            src={logo}
+            alt="Logo"
+          />
+      </Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Row>
         <Navbar.Collapse id="basic-navbar-nav">
@@ -61,9 +62,7 @@ export default function NavbarComponent() {
               className="d-flex align-items-center"
             >
               <Nav className="mr-auto" style={{ marginRight: "1rem" }}>
-                <Nav.Link className="navlink" href="#home">
-                  How it works
-                </Nav.Link>
+                <Link className="navlink" to="/howitworks">How It Works</Link>
               </Nav>
               <Button
                 style={{ marginRight: "7px" }}

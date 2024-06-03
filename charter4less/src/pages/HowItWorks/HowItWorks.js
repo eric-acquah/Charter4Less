@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import './HowItWorks.css';
 import { Container, Row, Col, Button, Nav } from 'react-bootstrap';
 
@@ -78,9 +80,11 @@ export default function HowItWorks() {
                             </Col>
                         </Row>
                     )}
-                    <Button className="how-it-works-btn button" >
-                    {activeTab === 'owners' ? 'List Item' : 'Rent Item'}
-                </Button>
+                    <Link to={activeTab === 'owners' ? '/list-item' : '/categories'}>
+                        <Button className="how-it-works-btn button" >
+                        {activeTab === 'owners' ? 'List Item' : 'Rent Item'}
+                        </Button>
+                    </Link>
                 </Container>
             </div>
         </section>

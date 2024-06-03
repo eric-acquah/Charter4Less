@@ -2,6 +2,8 @@ import React from "react";
 import { Card, Container, Button, Row, Col } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
+import { Link } from "react-router-dom";
+
 import "swiper/css"; // core Swiper
 import "swiper/css/navigation"; // Navigation module
 import "swiper/css/pagination"; // Pagination module
@@ -87,9 +89,11 @@ export default function ExploreCategorySection() {
         </Row>
         <Row>
           <Col className="slider-col-btn">
-            <Button className="slider-btn" variant="primary" size="lg">
-              Explore our categories
-            </Button>
+            <Link to="/categories">
+              <Button className="slider-btn" variant="primary" size="lg">
+                Explore our categories
+              </Button>
+            </Link>
           </Col>
         </Row>
       </Container>
