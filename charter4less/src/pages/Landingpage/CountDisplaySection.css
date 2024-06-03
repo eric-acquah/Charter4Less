@@ -20,8 +20,13 @@
 }
 
 .count-row p {
-    color: var(--color-secon);
     color: var(--color-accent-2);
     font-size: 1.5rem;
     font-weight: 400;
+}
+
+.plus {
+    color: var(--color-accent-3);
+    font-size: 5rem;
+    font-weight: 500;
 }

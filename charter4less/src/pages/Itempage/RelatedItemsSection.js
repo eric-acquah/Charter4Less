@@ -7,6 +7,7 @@ import ImgPlaceholder from "../../assets/images/explore-image.jpeg";
 import ImgPlaceholder1 from "../../assets/images/thumbnail-1.jpg";
 
 
+
 const cardData = [
   {ownerFirstName: "Kwame", ownerRating: 14, type: "tools", title: "Something X900 Pro-Max | Dark Gray", location: "Kumasi", price: 20, imgList: [ImgPlaceholder, ImgPlaceholder1]},
   {ownerFirstName: "Kofi", ownerRating: 12, type: "tools", title: "Otherthing 200 Pro-Max", location: "Kumasi", price: 10, imgList: [ImgPlaceholder]},

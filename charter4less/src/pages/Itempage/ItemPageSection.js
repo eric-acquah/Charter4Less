@@ -9,6 +9,7 @@ import ReviewSection from "./ReviewSection";
 import "./ItemPageSection.css";
 import ImgPlaceholder from "../../assets/images/explore-image.jpeg";
 import ImgPlaceholder1 from "../../assets/images/thumbnail-1.jpg";
+import ImgPlaceholder2 from "../../assets/images/placeholder-profile.jpg";
 import RelatedItemsSection from "./RelatedItemsSection";
 
 const reviewData = [
@@ -154,7 +155,7 @@ export default function ItemPageSection() {
               <Button size="md" variant="primary">See More</Button>
             </div>
             <div className="owner-profile-pic">
-              <img src={ImgPlaceholder} alt="profile img" />
+              <img src={ImgPlaceholder2} alt="profile img" />
             <span>
               <ContactInfo targetElement={phoneIconTarget} info="+233 036 746 6799" />
               <ContactInfo targetElement={whatsappIconTarget} />

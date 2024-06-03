@@ -89,6 +89,7 @@ function ReviewCard({ reviewsData = [] }) {
       spaceBetween={120}
       centeredSlides={true}
       loop={true}
+      navigation={true}
       pagination={{ clickable: true }}
       modules={[Navigation, Pagination]}
       className="reviewSwiper"
