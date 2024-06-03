@@ -1,0 +1,64 @@
+/* AboutUs.css */
+
+/* Container styling for positioning */
+.about-us-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    justify-content: center;
+    margin-top: 5rem;
+    width: 70%;
+}
+
+.card-custom {
+    width: 25rem;
+    height: 27rem; /* Adjust height as needed */
+  }
+  
+.card-1 {
+    /* Styles specific to Card 1 */
+    background-color: #f8f9fa; /* Light grey background */
+    padding-right: 5rem;
+}
+
+.card-title-1 {
+    margin-left: 3rem;
+}
+
+.card-2 {
+    /* Styles specific to Card 2 */
+    background-color: #e9ecef; /* Slightly darker grey background */
+}
+
+.card-title-2 {
+    margin-left: 6rem;
+}
+
+.card-3 {
+    /* Styles specific to Card 3 */
+    background-color: #dee2e6; /* Another shade of grey */
+    position: absolute;
+    left: 50%; /* Adjust this value to move the card left or right */
+    transform: translate(-50%, -50%); /* Center the card */
+    box-shadow: 10px 10px;
+}
+
+.card-title-3 {
+    margin-left: 6rem;
+}
+
+.card-title-3-button {
+    margin-top: 17rem;
+    margin-left:17rem;
+}
+
+/* Adjust the card-3 position to be between card-1 and card-2 */
+@media (min-width: 768px) {
+    .card-col-3 {
+        position: absolute;
+        top: 10rem; /* Adjust based on desired vertical positioning */
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
