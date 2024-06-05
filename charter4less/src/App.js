@@ -10,6 +10,7 @@ import CategoriesPage from './pages/Categoriespage/CategoriesPage';
 import HowItWorkspage from './pages/HowItWorks/HowItWorkspage';
 import Itempage from './pages/Itempage/Itempage';
 import Errorpage from './pages/Errorpage/Errorpage';
+import ListItempage from './pages/Listitempage/ListItempage';
 
 
 const router = createBrowserRouter([
@@ -29,8 +30,15 @@ const router = createBrowserRouter([
   {
     path: '/item',
     element: <Itempage />,
+  },
+  {
+    path: '/listitem',
+    element: <ListItempage />,
+  },
+  {
+    path: '*',
+    element: <Errorpage />,
   }
-
 ]);
 
 
