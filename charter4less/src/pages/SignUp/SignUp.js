@@ -12,7 +12,7 @@ export default function SignUp() {
     username: Yup.string().required('Username is required'),
     city: Yup.string().required('City is required'),
     state: Yup.string().required('State is required'),
-    zip: Yup.string().required('Zip code is required'),
+    contact: Yup.number().required('Contact is required'),
     file: Yup.mixed().required('File is required'),
     terms: Yup.bool().required('Terms must be accepted').oneOf([true], 'Terms must be accepted'),
   });
@@ -59,6 +59,8 @@ export default function SignUp() {
               />
               <Form.Control.Feedback type="invalid" tooltip>{errors.lastName}</Form.Control.Feedback>
             </Form.Group>
+          </Row>
+          <Row>
             <Form.Group as={Col} md="4" controlId="validationFormikUsername2">
               <Form.Label>Username</Form.Label>
               <InputGroup hasValidation>
@@ -89,6 +91,8 @@ export default function SignUp() {
               />
               <Form.Control.Feedback type="invalid" tooltip>{errors.city}</Form.Control.Feedback>
             </Form.Group>
+          </Row>
+          <Row>
             <Form.Group as={Col} md="3" controlId="validationFormik104" className="position-relative">
               <Form.Label>State</Form.Label>
               <Form.Control
@@ -101,17 +105,19 @@ export default function SignUp() {
               />
               <Form.Control.Feedback type="invalid" tooltip>{errors.state}</Form.Control.Feedback>
             </Form.Group>
+          </Row>
+          <Row>
             <Form.Group as={Col} md="3" controlId="validationFormik105" className="position-relative">
-              <Form.Label>Zip</Form.Label>
+              <Form.Label>Contact</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="Zip"
-                name="zip"
-                value={values.zip}
+                type="value"
+                placeholder="Contact"
+                name="contact"
+                value={values.contact}
                 onChange={handleChange}
-                isInvalid={touched.zip && !!errors.zip}
+                isInvalid={touched.contact && !!errors.contact}
               />
-              <Form.Control.Feedback type="invalid" tooltip>{errors.zip}</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid" tooltip>{errors.contact}</Form.Control.Feedback>
             </Form.Group>
           </Row>
           <Form.Group className="position-relative mb-3">
@@ -139,7 +145,7 @@ export default function SignUp() {
               feedbackTooltip
             />
           </Form.Group>
-          <Button type="submit">Submit form</Button>
+          <Button type="submit">Submit</Button>
         </Form>
       )}
     </Formik>
