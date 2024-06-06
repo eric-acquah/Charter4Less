@@ -12,7 +12,7 @@ export default function SignUp() {
     username: Yup.string().required('Username is required'),
     city: Yup.string().required('City is required'),
     state: Yup.string().required('State is required'),
-    contact: Yup.number().required('Contact is required'),
+    contact: Yup.number().typeError('Contact must be a number').required('Contact is required'),
     file: Yup.mixed().required('File is required'),
     terms: Yup.bool().required('Terms must be accepted').oneOf([true], 'Terms must be accepted'),
   });
@@ -33,6 +33,8 @@ export default function SignUp() {
       }}
     >
       {({ handleSubmit, handleChange, setFieldValue, values, touched, errors }) => (
+        <div className="signup-form-container">
+        <h1 className="text-center">Sign Up</h1>
         <Form noValidate onSubmit={handleSubmit}>
           <Row className="mb-3">
             <Form.Group as={Col} md="4" controlId="validationFormik101" className="position-relative">
@@ -67,7 +69,7 @@ export default function SignUp() {
                 <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
                 <Form.Control
                   type="text"
-                  placeholder="Username"
+                  placeholder=""
                   aria-describedby="inputGroupPrepend"
                   name="username"
                   value={values.username}
@@ -83,7 +85,7 @@ export default function SignUp() {
               <Form.Label>City</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="City"
+                placeholder=""
                 name="city"
                 value={values.city}
                 onChange={handleChange}
@@ -97,7 +99,7 @@ export default function SignUp() {
               <Form.Label>State</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="State"
+                placeholder=""
                 name="state"
                 value={values.state}
                 onChange={handleChange}
@@ -110,8 +112,8 @@ export default function SignUp() {
             <Form.Group as={Col} md="3" controlId="validationFormik105" className="position-relative">
               <Form.Label>Contact</Form.Label>
               <Form.Control
-                type="value"
-                placeholder="Contact"
+                type="number"
+                placeholder=""
                 name="contact"
                 value={values.contact}
                 onChange={handleChange}
@@ -147,6 +149,7 @@ export default function SignUp() {
           </Form.Group>
           <Button type="submit">Submit</Button>
         </Form>
+      </div>
       )}
     </Formik>
   );
