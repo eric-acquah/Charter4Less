@@ -1,7 +1,7 @@
 import React from 'react';
 import './SignUp.css';
 import { Button, Col, Form, InputGroup, Row } from 'react-bootstrap';
-import { Formik } from 'formik';
+import { Formik, setFieldValue } from 'formik'; // Import setFieldValue from formik
 import * as Yup from 'yup';
 
 export default function SignUp() {
@@ -112,7 +112,7 @@ export default function SignUp() {
               type="file"
               name="profilePicture"
               onChange={(event) => {
-                setFieldValue('profilePicture', event.currentTarget.files[0]);
+                setFieldValue('profilePicture', event.target.files[0]);
               }}
               isInvalid={touched.profilePicture && !!errors.profilePicture}
             />
