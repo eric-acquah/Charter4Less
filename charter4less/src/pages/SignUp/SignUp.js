@@ -10,10 +10,9 @@ export default function SignUp() {
     firstName: Yup.string().required('First name is required'),
     lastName: Yup.string().required('Last name is required'),
     username: Yup.string().required('Username is required'),
-    city: Yup.string().required('City is required'),
-    state: Yup.string().required('State is required'),
+    address: Yup.string().required('Address is required'),
     contact: Yup.number().typeError('Contact must be a number').required('Contact is required'),
-    file: Yup.mixed().required('File is required'),
+    profilePicture: Yup.mixed().required('Profile picture is required'),
     terms: Yup.bool().required('Terms must be accepted').oneOf([true], 'Terms must be accepted'),
   });
 
@@ -25,10 +24,9 @@ export default function SignUp() {
         firstName: '',
         lastName: '',
         username: '',
-        city: '',
-        state: '',
-        zip: '',
-        file: null,
+        address: '',
+        contact: '',
+        profilePicture: null,
         terms: false,
       }}
     >
@@ -80,32 +78,18 @@ export default function SignUp() {
               </InputGroup>
             </Form.Group>
           </Row>
-          <Row className="mb-3">
-            <Form.Group as={Col} md="6" controlId="validationFormik103" className="position-relative">
-              <Form.Label>City</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder=""
-                name="city"
-                value={values.city}
-                onChange={handleChange}
-                isInvalid={touched.city && !!errors.city}
-              />
-              <Form.Control.Feedback type="invalid" tooltip>{errors.city}</Form.Control.Feedback>
-            </Form.Group>
-          </Row>
           <Row>
             <Form.Group as={Col} md="3" controlId="validationFormik104" className="position-relative">
-              <Form.Label>State</Form.Label>
+              <Form.Label>Address</Form.Label>
               <Form.Control
                 type="text"
                 placeholder=""
-                name="state"
-                value={values.state}
+                name="address"
+                value={values.address}
                 onChange={handleChange}
-                isInvalid={touched.state && !!errors.state}
+                isInvalid={touched.address && !!errors.address}
               />
-              <Form.Control.Feedback type="invalid" tooltip>{errors.state}</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid" tooltip>{errors.address}</Form.Control.Feedback>
             </Form.Group>
           </Row>
           <Row>
@@ -123,16 +107,16 @@ export default function SignUp() {
             </Form.Group>
           </Row>
           <Form.Group className="position-relative mb-3">
-            <Form.Label>File</Form.Label>
+            <Form.Label>Profile Picture</Form.Label>
             <Form.Control
               type="file"
-              name="file"
+              name="profilePicture"
               onChange={(event) => {
-                setFieldValue('file', event.currentTarget.files[0]);
+                setFieldValue('profilePicture', event.currentTarget.files[0]);
               }}
-              isInvalid={touched.file && !!errors.file}
+              isInvalid={touched.profilePicture && !!errors.profilePicture}
             />
-            <Form.Control.Feedback type="invalid" tooltip>{errors.file}</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid" tooltip>{errors.profilePicture}</Form.Control.Feedback>
           </Form.Group>
           <Form.Group className="position-relative mb-3">
             <Form.Check
