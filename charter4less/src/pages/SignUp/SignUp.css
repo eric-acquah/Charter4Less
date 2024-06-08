@@ -16,6 +16,12 @@
   margin-bottom: 20px;
 }
 
+/* Settting the width of the form rows to 100% */
+form .form-row {
+  width: 100%;
+}
+
+
 /* Styles for the form groups */
 form .form-group {
   margin-bottom: 15px;
@@ -40,7 +46,7 @@ form .input-group-text {
 
 /* Tooltip feedback styles */
 form .invalid-tooltip {
-  display: block;
+  display: none;
 }
 
 /* Button styles */

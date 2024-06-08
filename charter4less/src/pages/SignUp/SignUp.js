@@ -127,7 +127,7 @@ export default function SignUp() {
                 <Form.Control.Feedback type="invalid" tooltip>{errors.password}</Form.Control.Feedback>
               </Form.Group>
             </Row>
-            <Row>
+            <Row className="form-row">
               <Form.Group as={Col} md="4" controlId="validationFormikConfirmPassword">
                 <Form.Label>Confirm Password</Form.Label>
                 <Form.Control
