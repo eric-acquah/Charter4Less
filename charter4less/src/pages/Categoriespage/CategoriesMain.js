@@ -11,8 +11,13 @@ export default function CategoriesMain({ cardData }) {
 
   const modifiedCardData = filterCategories(cardData, firterType);
 
+  console.log(modifiedCardData)
+
+  console.log(cardData);
+
   useEffect(() => {}, [cardData, firterType]);
 
+  // Render the CategoriesMain component
   return (
     <section className="categories-section-wrapper">
       <Container className="section-container" fluid>
@@ -23,7 +28,7 @@ export default function CategoriesMain({ cardData }) {
                 className={`nav-head ${
                   selectedCategory === "categories" ? "selected" : ""
                 }`}
-                href="#categories"
+                // href="#categories"
                 onClick={() => {
                   setFilterType("all");
                   setSelectedCategory("categories");
@@ -33,7 +38,7 @@ export default function CategoriesMain({ cardData }) {
               </Nav.Link>
               <Nav.Link
                 className={`${selectedCategory === "tools" ? "selected" : ""}`}
-                href="#tools"
+                // href="#tools"
                 onClick={() => {
                   setFilterType("tools");
                   setSelectedCategory("tools");
@@ -45,7 +50,7 @@ export default function CategoriesMain({ cardData }) {
                 className={`${
                   selectedCategory === "equipment" ? "selected" : ""
                 }`}
-                href="#equipment"
+                // href="#equipment"
                 onClick={() => {
                   setFilterType("equipment");
                   setSelectedCategory("equipment");
@@ -57,7 +62,7 @@ export default function CategoriesMain({ cardData }) {
                 className={`${
                   selectedCategory === "vehicles" ? "selected" : ""
                 }`}
-                href="#vehicles"
+                // href="#vehicles"
                 onClick={() => {
                   setFilterType("vehicles");
                   setSelectedCategory("vehicles");
@@ -69,7 +74,7 @@ export default function CategoriesMain({ cardData }) {
                 className={`${
                   selectedCategory === "electronics" ? "selected" : ""
                 }`}
-                href="#electronics"
+                // href="#electronics"
                 onClick={() => {
                   setFilterType("electronics");
                   setSelectedCategory("electronics");
@@ -81,7 +86,7 @@ export default function CategoriesMain({ cardData }) {
                 className={`${
                   selectedCategory === "apparel&accessories" ? "selected" : ""
                 }`}
-                href="#apparel&accessories"
+                // href="#apparel&accessories"
                 onClick={() => {
                   setFilterType("apparel & accessories");
                   setSelectedCategory("apparel&accessories");
@@ -93,7 +98,7 @@ export default function CategoriesMain({ cardData }) {
                 className={`${
                   selectedCategory === "event&party-supplies" ? "selected" : ""
                 }`}
-                href="#event&party-supplies"
+                // href="#event&party-supplies"
                 onClick={() => {
                   setFilterType("event & party supplies");
                   setSelectedCategory("event&party-supplies");
@@ -106,7 +111,7 @@ export default function CategoriesMain({ cardData }) {
                 className={`${
                   selectedCategory === "utensils" ? "selected" : ""
                 }`}
-                href="#utensils"
+                // href="#utensils"
                 onClick={() => {
                   setFilterType("utensils");
                   setSelectedCategory("utensils");
@@ -116,7 +121,7 @@ export default function CategoriesMain({ cardData }) {
               </Nav.Link>
               <Nav.Link
                 className={`${selectedCategory === "spaces" ? "selected" : ""}`}
-                href="#spaces"
+                // href="#spaces"
                 onClick={() => {
                   setFilterType("spaces");
                   setSelectedCategory("spaces");

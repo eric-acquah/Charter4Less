@@ -89,27 +89,27 @@ export default function ItemCardComponent({ cardData = [] }) {
             return (
               <Col key={index}>
                 <Card className="card-main">
-                  <CardImage imgList={card.imgList} />
+                  <CardImage imgList={card.itemImage} />
                   <Link to="/item">
                   <Card.Body className="card-body">
                     <Card.Title className="card-text-title">
-                      {card.title}
+                      {card.itemName}
                     </Card.Title>
                     <div className="text-wrapper">
                       <Card.Text className="card-text">
-                        {card.location}
+                        {card.itemLocation}
                       </Card.Text>
                       <Card.Text className="card-text owner-name">
-                        {card.ownerFirstName}{" "}
+                        {card.ownerFirstName ? card.ownerFirstName : "Owner Name"}{" "}
                         <FontAwesomeIcon
                           icon={Rastar}
                           style={{ color: "#FEB941" }}
                         />{" "}
-                        ({card.ownerRating})
+                        ({card.ownerRating ? card.ownerRating : "0"})
                       </Card.Text>
                     </div>
                     <Card.Text className="card-text price">
-                      ${card.price}/day
+                      ${card.itemPrice}/day
                     </Card.Text>
                   </Card.Body>
                   </Link>

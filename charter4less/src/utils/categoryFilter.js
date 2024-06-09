@@ -24,8 +24,8 @@ export default function filterCategories(categories, filterType = "all") {
   ];
 
   const sortCategories = (a, b) => {
-    const indexA = categoryOrder.indexOf(a.type);
-    const indexB = categoryOrder.indexOf(b.type);
+    const indexA = categoryOrder.indexOf(a.itemCategory);
+    const indexB = categoryOrder.indexOf(b.itemCategory);
 
     if (indexA === -1) return 1;
     if (indexB === -1) return -1;
@@ -37,5 +37,5 @@ export default function filterCategories(categories, filterType = "all") {
     return categories.sort(sortCategories);
   }
 
-  return categories.filter((category) => category.type === filterType);
+  return categories.filter((category) => category.itemCategory === filterType);
 } 
