@@ -1,10 +1,10 @@
 import React from 'react';
-import './SignIn.css';
+import './LogIn.css';
 import { Button, Col, Form, InputGroup, Row } from 'react-bootstrap';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-export default function SignIn() {
+export default function LogIn() {
 
   const schema = Yup.object().shape({
     username: Yup.string().required('Username is required'),
@@ -22,12 +22,12 @@ export default function SignIn() {
         password: '',
       }}
     >
-      {({ handleSubmit, handleChange, setFieldValue, values, touched, errors }) => (
-        <div className="signup-form-container">
-          <h1 className="text-center">Sign In</h1>
+      {({ handleSubmit, handleChange, values, touched, errors }) => (
+        <div className="login-form-container">
+          <h1 className="text-center">Log In</h1>
           <Form noValidate onSubmit={handleSubmit}>
             <Row className="form-row">
-              <Form.Group as={Col} md="4" controlId="validationFormikUsername2">
+              <Form.Group as={Col} controlId="validationFormikUsername" className="position-relative">
                 <Form.Label>Username</Form.Label>
                 <InputGroup hasValidation>
                   <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
@@ -44,8 +44,8 @@ export default function SignIn() {
                 </InputGroup>
               </Form.Group>
             </Row>
-            <Row className="form-row">
-              <Form.Group as={Col} md="4" controlId="validationFormikPassword">
+            <Row className="form-row password-row">
+              <Form.Group as={Col} controlId="validationFormikPassword" className="position-relative">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   type="password"
@@ -57,7 +57,9 @@ export default function SignIn() {
                 <Form.Control.Feedback type="invalid" tooltip>{errors.password}</Form.Control.Feedback>
               </Form.Group>
             </Row>
-            <Button type="submit">Submit</Button>
+            <Row>
+              <Button type="submit">Submit</Button>
+            </Row>
           </Form>
         </div>
       )}
