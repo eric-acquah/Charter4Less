@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useState } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { db, storage } from "../firebase";
@@ -10,6 +10,7 @@ export default function useAddItem({reset}) {
   const [itemData, setItemData] = useState({});
   const [imgIsUploaded, setImageIsUploaded] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [uploadError, setUploadError] = useState(false);
   const [docAdded, setDocAdded] = useState(false);
 
   const uniq = uuidv4();
@@ -17,30 +18,31 @@ export default function useAddItem({reset}) {
 
   // init();
 
-  const uploadImages = useCallback(
+  // Upload multiple images to Firebase Storage
+  const uploadImages = useCallback( 
     async (files) => {
       const imgPromises = [];
   
       files.forEach((img) => {
-        const storageRef = ref(storage, `itemImages/${uniq}/${img.name}`);
+        const storageRef = ref(storage, `itemImages/${uniq}/${img.name}`); /*Create unique referance for each image*/
         const uploadTask = uploadBytesResumable(storageRef, img);
-        imgPromises.push(uploadTask);
+        imgPromises.push(uploadTask); /*Push each upload task to the array*/
       });
   
       try {
-        console.log("Images uploading...");
-        const snapshots = await Promise.all(imgPromises);
-        const urlPromises = snapshots.map((snapshot) => getDownloadURL(snapshot.ref));
-        console.log("Images uploaded");
-        const imgUrls = await Promise.all(urlPromises);
-        return imgUrls;
+        const snapshots = await Promise.all(imgPromises); /*Wait for all images to be uploaded*/
+        const urlPromises = snapshots.map((snapshot) => getDownloadURL(snapshot.ref)); /*Get download URL for each image*/
+        const imgUrls = await Promise.all(urlPromises); /*Wait for all URLs to be generated*/
+        return imgUrls; /*Return array of URLs*/
       } catch (error) {
+        setUploadError(true);
         console.error("Error uploading images: ", error);
       }
   
     }, [uniq]
   )
 
+  // Upload single image to Firebase Storage
   const uploadImage = useCallback(
     async (file) => {
       const storageRef = ref(storage, `itemImages/${uniq}/${file.name}`);
@@ -50,10 +52,10 @@ export default function useAddItem({reset}) {
         const snapshot = await uploadTask; 
         console.log("Image uploading...");
         const url = await getDownloadURL(snapshot.ref)
-        // setImageIsUploaded(true);
         console.log("Image uploaded");
         return url;
       } catch (error) {
+        setUploadError(true);
         console.error("Error uploading image: ", error);
       }
     }, [uniq]
@@ -83,6 +85,7 @@ export default function useAddItem({reset}) {
             console.log("item data update: ", itemData);
             await setDoc(doc(db, "items", `${itemData.itemName}-${uniq.slice(0, 13)}`), itemData);
           } catch (error) {
+            setUploadError(true);
             console.error("Error adding document: ", error);
           }
         })();
@@ -96,5 +99,5 @@ export default function useAddItem({reset}) {
 
   }, [itemData, formSubmitted, imgIsUploaded, uniq, reset])
 
-  return {formSubmitted, setFormSubmitted, setImageIsUploaded, docAdded, handleUpload, setItemData};
+  return {formSubmitted, setFormSubmitted, setImageIsUploaded, docAdded, handleUpload, setItemData, uploadError};
 }

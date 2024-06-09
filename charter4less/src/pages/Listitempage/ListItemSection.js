@@ -36,16 +36,17 @@ export default function ListItemSection() {
     setImageIsUploaded(true);
   }
 
-  const {formSubmitted, docAdded, handleUpload, setFormSubmitted, setImageIsUploaded, setItemData} = useAddItem({reset: reset});
+  const {formSubmitted, docAdded, handleUpload, setFormSubmitted, setImageIsUploaded, setItemData, uploadError} = useAddItem({reset: reset});
 
   return (
     <div className="list-item-section">
       <Container>
         <div className="form-wrapper" >
         {
-          docAdded && <Alert variant="success" dismissible>
+          docAdded ? <Alert variant="success" dismissible>
           Your item has been listed successfully!
-        </Alert> 
+        </Alert>
+        : uploadError ? <Alert variant="danger" dismissible>Something went wrong while listing item. Try again later</Alert> : ""
         }
           <Row> 
             <Col className="form-title">
