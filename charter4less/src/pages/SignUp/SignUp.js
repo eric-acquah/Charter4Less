@@ -13,6 +13,8 @@ export default function SignUp() {
     address: Yup.string().required('Address is required'),
     contact: Yup.number().typeError('Contact must be a number').required('Contact is required'),
     profilePicture: Yup.mixed().required('Profile picture is required'),
+    bio: Yup.string().required('Bio is required'),
+    idCardOrLicense: Yup.mixed().required('National ID card or Driver\'s license is required'),
     password: Yup.string()
       .required('Password is required')
       .min(8, 'Password must be at least 8 characters'),
@@ -33,6 +35,8 @@ export default function SignUp() {
         address: '',
         contact: '',
         profilePicture: null,
+        bio: '',
+        idCardOrLicense: null,
         password: '',
         confirmPassword: '',
         terms: false,
@@ -112,6 +116,34 @@ export default function SignUp() {
                   isInvalid={touched.contact && !!errors.contact}
                 />
                 <Form.Control.Feedback type="invalid" tooltip>{errors.contact}</Form.Control.Feedback>
+              </Form.Group>
+            </Row>
+            <Row className="form-row">
+              <Form.Group as={Col} controlId="validationFormikBio" className="position-relative">
+                <Form.Label>Bio</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  name="bio"
+                  value={values.bio}
+                  onChange={handleChange}
+                  isInvalid={touched.bio && !!errors.bio}
+                />
+                <Form.Control.Feedback type="invalid" tooltip>{errors.bio}</Form.Control.Feedback>
+              </Form.Group>
+            </Row>
+            <Row className="form-row">
+              <Form.Group as={Col} controlId="validationFormikIdCardOrLicense" className="position-relative">
+                <Form.Label>National ID card or Driver's License</Form.Label>
+                <Form.Control
+                  type="file"
+                  name="idCardOrLicense"
+                  onChange={(event) => {
+                    setFieldValue('idCardOrLicense', event.target.files[0]);
+                  }}
+                  isInvalid={touched.idCardOrLicense && !!errors.idCardOrLicense}
+                />
+                <Form.Control.Feedback type="invalid" tooltip>{errors.idCardOrLicense}</Form.Control.Feedback>
               </Form.Group>
             </Row>
             <Row className="form-row">
