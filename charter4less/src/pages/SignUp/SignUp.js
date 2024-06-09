@@ -43,7 +43,7 @@ export default function SignUp() {
           <h1 className="text-center">Sign Up</h1>
           <Form noValidate onSubmit={handleSubmit}>
             <Row className="mb-3 form-row">
-              <Form.Group as={Col} md="4" controlId="validationFormik101" className="position-relative">
+              <Form.Group as={Col} controlId="validationFormik101" className="position-relative">
                 <Form.Label>First name</Form.Label>
                 <Form.Control
                   type="text"
@@ -55,7 +55,7 @@ export default function SignUp() {
                 />
                 <Form.Control.Feedback type="invalid" tooltip>{errors.firstName}</Form.Control.Feedback>
               </Form.Group>
-              <Form.Group as={Col} md="4" controlId="validationFormik102" className="position-relative">
+              <Form.Group as={Col} controlId="validationFormik102" className="position-relative">
                 <Form.Label>Last name</Form.Label>
                 <Form.Control
                   type="text"
@@ -69,7 +69,7 @@ export default function SignUp() {
               </Form.Group>
             </Row>
             <Row className="form-row">
-              <Form.Group as={Col} md="4" controlId="validationFormikUsername2">
+              <Form.Group as={Col} controlId="validationFormikUsername2" className="position-relative">
                 <Form.Label>Username</Form.Label>
                 <InputGroup hasValidation>
                   <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
@@ -87,7 +87,7 @@ export default function SignUp() {
               </Form.Group>
             </Row>
             <Row className="form-row">
-              <Form.Group as={Col} md="3" controlId="validationFormik104" className="position-relative">
+              <Form.Group as={Col} controlId="validationFormik104" className="position-relative">
                 <Form.Label>Address</Form.Label>
                 <Form.Control
                   type="text"
@@ -101,7 +101,7 @@ export default function SignUp() {
               </Form.Group>
             </Row>
             <Row className="form-row">
-              <Form.Group as={Col} md="3" controlId="validationFormik105" className="position-relative">
+              <Form.Group as={Col} controlId="validationFormik105" className="position-relative">
                 <Form.Label>Contact</Form.Label>
                 <Form.Control
                   type="number"
@@ -115,7 +115,7 @@ export default function SignUp() {
               </Form.Group>
             </Row>
             <Row className="form-row">
-              <Form.Group as={Col} md="4" controlId="validationFormikPassword">
+              <Form.Group as={Col} controlId="validationFormikPassword" className="position-relative">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   type="password"
@@ -128,7 +128,7 @@ export default function SignUp() {
               </Form.Group>
             </Row>
             <Row className="form-row">
-              <Form.Group as={Col} md="4" controlId="validationFormikConfirmPassword">
+              <Form.Group as={Col} controlId="validationFormikConfirmPassword" className="position-relative">
                 <Form.Label>Confirm Password</Form.Label>
                 <Form.Control
                   type="password"

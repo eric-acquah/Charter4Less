@@ -17,7 +17,7 @@
 }
 
 /* Settting the width of the form rows to 100% */
-form .form-row {
+.signup-form-container .form-row {
   width: 100%;
 }
 
