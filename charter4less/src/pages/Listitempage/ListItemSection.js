@@ -1,38 +1,53 @@
-import React, {useState, useEffect} from "react";
-import { Col, Container, Row, Form, InputGroup, Button } from "react-bootstrap";
+import React, {useState} from "react";
+import { Col, Container, Row, Form, InputGroup, Button, Alert, Spinner } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import useAddItem from "../../hooks/useAddItem";
 import "./ListItemSection.css";
 
 const schema = z.object({
-  itemName: z.string().max(50).min(5),
-  itemDescription: z.string().max(2000).min(20),
+  itemName: z.string().max(50, "Item name must not be more than 50 characters").min(5, "Item name must be at least 5 characters"),
+  itemDescription: z.string().max(2000, "Item description must not be more than 2000 characters").min(20, "Item description must be at least 20 characters"),
   itemPrice: z.string().regex(/^[1-9]+\.?\d*$/, "Price must be a positive number greater than 0"),
-  itemLocation: z.string().max(50).min(4),
-  // itemImage: z.object().refine(obj => Object.keys(obj).length > 0, {
-  //   message: "At least one image must be uploaded",
-  //   path: ['itemImage']
-  // }),
+  itemLocation: z.string().max(50, "Please enter a valid location").min(4, "Please enter a valid location"),
+  itemCategory: z.string().min(1, "Please select a category for the item"),
+  itemImage: z.unknown()
+  .refine((file) => file && file.length > 0, {message: "Upload at least one image of the item"})
+  .refine((file) => file && file.length <= 5, {message: "You can only upload up to 5 images"}),
 });
 
 
 export default function ListItemSection() {
-  const { register, handleSubmit, formState:{ errors } } = useForm(
+  // const [itemData, setItemData] = useState({});
+  // const [formSubmitted, setFormSubmitted] = useState(false);
+  const { register, handleSubmit, reset, formState:{ errors } } = useForm(
     {
       resolver: zodResolver(schema),
     }
   );
 
-  const onSubmit = (data) => {
+
+  const onSubmit = async (data) => {
     console.log(data);
+    setItemData(data);
+    setFormSubmitted(true);
+    await handleUpload(data)
+    setImageIsUploaded(true);
   }
+
+  const {formSubmitted, docAdded, handleUpload, setFormSubmitted, setImageIsUploaded, setItemData} = useAddItem({reset: reset});
 
   return (
     <div className="list-item-section">
       <Container>
         <div className="form-wrapper" >
-          <Row>
+        {
+          docAdded && <Alert variant="success" dismissible>
+          Your item has been listed successfully!
+        </Alert> 
+        }
+          <Row> 
             <Col className="form-title">
               <h1>List Item</h1>
             </Col>
@@ -77,7 +92,7 @@ export default function ListItemSection() {
                   <Col>
                     <Form.Group controlId="">
                       <Form.Label>Item Image</Form.Label>
-                      <Form.Control isInvalid={errors.itemImage} {...register("itemImage")} name="itemImage" accept="image/png, image/jpeg" type="file" multiple placeholder="Enter item image" />
+                      <Form.Control isInvalid={errors.itemImage} {...register("itemImage", {required: "Upload at least one image of the item", validate: (file) => file.length > 0})} name="itemImage" accept="image/png, image/jpeg" type="file" multiple placeholder="Enter item image" />
                       <Form.Control.Feedback type="invalid">
                             {errors.itemImage && errors.itemImage.message}
                       </Form.Control.Feedback>
@@ -95,8 +110,8 @@ export default function ListItemSection() {
                   <Col className="form-sections-row2-col3">
                     <Form.Group className="col3-form" controlId="">
                       <Form.Label>Item Category</Form.Label>
-                      <Form.Select {...register("itemCategory")} name="itemCategory" >
-                        <option disabled >Select category of item</option>
+                      <Form.Select isInvalid={errors.itemCategory} {...register("itemCategory")} name="itemCategory" >
+                        <option value="">Select category of item</option>
                         <option value="tools">Tool</option>
                         <option value="equipment">Equipment</option>
                         <option value="vehicles">Vehicle</option>
@@ -106,8 +121,15 @@ export default function ListItemSection() {
                         <option value="Event&party-supplies">Event/Party Supply</option>
                         <option value="Residential-Commercial-spaces">Residential/Commercial space </option>
                       </Form.Select>
+                      <Form.Control.Feedback type="invalid">
+                        {errors.itemCategory && errors.itemCategory.message}
+                      </Form.Control.Feedback>
                     </Form.Group>
-                    <Button className="form-submit-btn" type="submit" variant="primary">Sunmit</Button>
+                    <Button className={`form-submit-btn ${formSubmitted ? 'disabled' : ''}`} type="submit" variant="primary">
+                      {
+                        formSubmitted ? <span className="save-spinner"><Spinner aria-hidden="true" className="spinner-element" animation="border" role="status" /> Saving...</span> : "Submit"
+                      }
+                    </Button>
                   </Col>
                 </Row>
               </Form>
