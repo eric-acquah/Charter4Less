@@ -1,0 +1,70 @@
+/* SignUp.css */
+
+/* General styles for the form container */
+.signup-form-container {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 600px;
+  background-color: #f9f9f9;
+}
+
+/* Centered header for the sign-up form */
+.signup-form-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Settting the width of the form rows to 100% */
+form .form-row {
+  width: 100%;
+}
+
+
+/* Styles for the form groups */
+form .form-group {
+  margin-bottom: 15px;
+}
+
+/* Styles for the form labels */
+form .form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Styles for the form controls (input fields, etc.) */
+form .form-control {
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+}
+
+/* Styles for the InputGroup */
+form .input-group-text {
+  background-color: #e9ecef;
+}
+
+/* Tooltip feedback styles */
+form .invalid-tooltip {
+  display: none;
+}
+
+/* Button styles */
+form .btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Row styles for spacing */
+form .row {
+  margin-bottom: 15px;
+}
