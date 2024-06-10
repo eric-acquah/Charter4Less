@@ -15,7 +15,7 @@ export default function HeroSection() {
           <Col className="text-col" md={6}>
             <h1>Borrow, Lend, Share: Your Local Rental Hub!</h1>
             <p>Need something? Find it here. Got something? Rent it out. Join your neighbors in making sharing simple and fun!</p>
-            <Link to="/list-item">
+            <Link to="/listitem">
             <Button className="btn action" variant="primary">List Item</Button>
             </Link>
           </Col>

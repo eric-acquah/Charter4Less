@@ -80,7 +80,7 @@ export default function HowItWorks() {
                             </Col>
                         </Row>
                     )}
-                    <Link to={activeTab === 'owners' ? '/list-item' : '/categories'}>
+                    <Link to={activeTab === 'owners' ? '/listitem' : '/categories'}>
                         <Button className="how-it-works-btn button" >
                         {activeTab === 'owners' ? 'List Item' : 'Rent Item'}
                         </Button>

@@ -37,7 +37,7 @@ function ItemImg({ itemImg = [] }) {
               itemImg.map((img, idx) => {
                 return (
                   <Carousel.Item key={idx}>
-                    <img className="item-imgs" src={img.itemImage} alt=""/>
+                    <img className="item-imgs" src={img} alt=""/>
                   </Carousel.Item>
                 )
               })
@@ -74,7 +74,9 @@ const phoneIconTarget = <FontAwesomeIcon icon={faPhone} />;
 const whatsappIconTarget = <FontAwesomeIcon icon={faWhatsapp} />;
 const MapChildComponent = ({ text }) => <div>{text}</div>;
 
-export default function ItemPageSection() {
+export default function ItemPageSection({ itemData }) {
+
+  console.log("Item Data => ", itemData.itemName)
 
   const defaultProps = {
     center: {
@@ -89,14 +91,18 @@ export default function ItemPageSection() {
       <Container className="item-des-container">
         <Row className="desc-section">
           <Col>
-            <ItemImg itemImg={itemImgData} />
+            { itemData.itemImage ? <ItemImg itemImg={itemData.itemImage} /> :
+              <ItemImg itemImg={itemImgData} />
+              }
           </Col>
           <Col>
             <div className="item-des">
               <div className="item-des-head">
               <h2>Description</h2>
-              <small>category</small>
+              { itemData.itemCategory ? <small>{itemData.itemCategory}</small> :
+                <small>category</small>}
               </div>
+             { itemData.itemDescription ? <p>{itemData.itemDescription}</p> :
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                 nec velit auctor, dictum justo sit amet, ultrices odio. Nullam
@@ -104,14 +110,18 @@ export default function ItemPageSection() {
                 Donec nec velit auctor, dictum justo sit amet, ultrices odio.
                 Nullam eget metus nec libero ultricies scelerisque. Nulla
                 facilisi.
-              </p>
+              </p>}
             </div>
           </Col>
           <Col>
           <div className="item-loc">
             <div className="item-loc-text">
             <h2>Location</h2>
-            <small>Ghana (<span>Kumasi</span>)</small>
+            { 
+            itemData.itemLocation 
+            ? <small>Ghana (<span>{itemData.itemLocation}</span>)</small> :
+              <small>Ghana (<span>Kumasi</span>)</small>
+              }
             </div>
               <div className="map-wrapper">
               <GoogleMapReact
@@ -140,9 +150,15 @@ export default function ItemPageSection() {
         <Row className="profile-section">
           <Col className="item-name-price">
             <div>
-              <h2>Item Name X900</h2>
+              { itemData.itemName 
+              ? <h2>{itemData.itemName}</h2> :
+                <h2>Item Name X900</h2>
+              }
             </div>
-            <div className="item-price-tag">$70<span className="per-day-tag">/day</span></div>
+            { itemData.itemPrice ? 
+              <div className="item-price-tag">${itemData.itemPrice}<span className="per-day-tag">/day</span></div> :
+              <div className="item-price-tag">$70<span className="per-day-tag">/day</span></div>
+              }
           </Col>
           <Col className="profile-wrapper">
             <div className="owner-profile-bio">
