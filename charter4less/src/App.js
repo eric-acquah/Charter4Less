@@ -30,6 +30,7 @@ const router = createBrowserRouter([
   {
     path: '/item',
     element: <Itempage />,
+    // loader: itemLoader,
   },
   {
     path: '/listitem',

@@ -3,7 +3,6 @@ import { Col, Row } from "react-bootstrap";
 import { ReviewStars } from "../Landingpage/ReviewSection";
 
 import ImgPlaceholder from "../../assets/images/explore-image.jpeg";
-import ImgPlaceholder1 from "../../assets/images/thumbnail-1.jpg";
 
 
 export default function ReviewSection({ reviewData = [] }) {

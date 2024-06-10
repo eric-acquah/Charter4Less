@@ -20,7 +20,7 @@ function BreadCrumbs() {
           const pathToCrumb = `/${crumbs.slice(0, index + 1).join('/')}`;
           return (
             <Link key={index} className={`breadcrumb-item ${currentPath.pathname === pathToCrumb ? 'activeCrumb': ''}`} to={pathToCrumb}>
-              {crumb === 'howitworks' ? 'How It Works' : 'listitem' ? 'List Item' : crumb.charAt(0).toUpperCase() + crumb.slice(1)}
+              {crumb === 'howitworks' ? 'How It Works' : (crumb === 'listitem' ? 'List Item' : crumb.charAt(0).toUpperCase() + crumb.slice(1))}
             </Link>
           );
         })

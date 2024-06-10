@@ -17,7 +17,6 @@ import "swiper/css"; // core Swiper
 import "swiper/css/navigation"; // Navigation module
 import "swiper/css/pagination"; // Pagination module
 
-
 function CardImage({ imgList = [] }) {
   const [showNavBtn, setShowNavBtn] = useState(true);
 
@@ -81,6 +80,13 @@ function CardImage({ imgList = [] }) {
 }
 
 export default function ItemCardComponent({ cardData = [] }) {
+
+  const handleCardClick = (itemData) => {
+    console.log("Loging available data in handlecardclick => " + itemData.itemName);
+    // setCardData(itemData);
+    sessionStorage.setItem("itemData", JSON.stringify(itemData));
+  };
+
   return (
     <div>
       <Row xs={1} md={2} lg={3} className="g-4 card-row-wrapper">
@@ -90,28 +96,30 @@ export default function ItemCardComponent({ cardData = [] }) {
               <Col key={index}>
                 <Card className="card-main">
                   <CardImage imgList={card.itemImage} />
-                  <Link to="/item">
-                  <Card.Body className="card-body">
-                    <Card.Title className="card-text-title">
-                      {card.itemName}
-                    </Card.Title>
-                    <div className="text-wrapper">
-                      <Card.Text className="card-text">
-                        {card.itemLocation}
+                  <Link onClick={() => handleCardClick(card)} to="/item">
+                    <Card.Body className="card-body">
+                      <Card.Title className="card-text-title">
+                        {card.itemName}
+                      </Card.Title>
+                      <div className="text-wrapper">
+                        <Card.Text className="card-text">
+                          {card.itemLocation}
+                        </Card.Text>
+                        <Card.Text className="card-text owner-name">
+                          {card.ownerFirstName
+                            ? card.ownerFirstName
+                            : "Owner Name"}{" "}
+                          <FontAwesomeIcon
+                            icon={Rastar}
+                            style={{ color: "#FEB941" }}
+                          />{" "}
+                          ({card.ownerRating ? card.ownerRating : "0"})
+                        </Card.Text>
+                      </div>
+                      <Card.Text className="card-text price">
+                        ${card.itemPrice}/day
                       </Card.Text>
-                      <Card.Text className="card-text owner-name">
-                        {card.ownerFirstName ? card.ownerFirstName : "Owner Name"}{" "}
-                        <FontAwesomeIcon
-                          icon={Rastar}
-                          style={{ color: "#FEB941" }}
-                        />{" "}
-                        ({card.ownerRating ? card.ownerRating : "0"})
-                      </Card.Text>
-                    </div>
-                    <Card.Text className="card-text price">
-                      ${card.itemPrice}/day
-                    </Card.Text>
-                  </Card.Body>
+                    </Card.Body>
                   </Link>
                 </Card>
               </Col>
