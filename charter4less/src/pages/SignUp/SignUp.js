@@ -13,6 +13,8 @@ export default function SignUp() {
     address: Yup.string().required('Address is required'),
     contact: Yup.number().typeError('Contact must be a number').required('Contact is required'),
     profilePicture: Yup.mixed().required('Profile picture is required'),
+    bio: Yup.string().required('Bio is required'),
+    idCardOrLicense: Yup.mixed().required('National ID card or Driver\'s license is required'),
     password: Yup.string()
       .required('Password is required')
       .min(8, 'Password must be at least 8 characters'),
@@ -33,6 +35,8 @@ export default function SignUp() {
         address: '',
         contact: '',
         profilePicture: null,
+        bio: '',
+        idCardOrLicense: null,
         password: '',
         confirmPassword: '',
         terms: false,
@@ -43,7 +47,7 @@ export default function SignUp() {
           <h1 className="text-center">Sign Up</h1>
           <Form noValidate onSubmit={handleSubmit}>
             <Row className="mb-3 form-row">
-              <Form.Group as={Col} md="4" controlId="validationFormik101" className="position-relative">
+              <Form.Group as={Col} controlId="validationFormik101" className="position-relative">
                 <Form.Label>First name</Form.Label>
                 <Form.Control
                   type="text"
@@ -55,7 +59,7 @@ export default function SignUp() {
                 />
                 <Form.Control.Feedback type="invalid" tooltip>{errors.firstName}</Form.Control.Feedback>
               </Form.Group>
-              <Form.Group as={Col} md="4" controlId="validationFormik102" className="position-relative">
+              <Form.Group as={Col} controlId="validationFormik102" className="position-relative">
                 <Form.Label>Last name</Form.Label>
                 <Form.Control
                   type="text"
@@ -69,7 +73,7 @@ export default function SignUp() {
               </Form.Group>
             </Row>
             <Row className="form-row">
-              <Form.Group as={Col} md="4" controlId="validationFormikUsername2">
+              <Form.Group as={Col} controlId="validationFormikUsername2" className="position-relative">
                 <Form.Label>Username</Form.Label>
                 <InputGroup hasValidation>
                   <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
@@ -87,7 +91,7 @@ export default function SignUp() {
               </Form.Group>
             </Row>
             <Row className="form-row">
-              <Form.Group as={Col} md="3" controlId="validationFormik104" className="position-relative">
+              <Form.Group as={Col} controlId="validationFormik104" className="position-relative">
                 <Form.Label>Address</Form.Label>
                 <Form.Control
                   type="text"
@@ -101,7 +105,7 @@ export default function SignUp() {
               </Form.Group>
             </Row>
             <Row className="form-row">
-              <Form.Group as={Col} md="3" controlId="validationFormik105" className="position-relative">
+              <Form.Group as={Col} controlId="validationFormik105" className="position-relative">
                 <Form.Label>Contact</Form.Label>
                 <Form.Control
                   type="number"
@@ -115,7 +119,35 @@ export default function SignUp() {
               </Form.Group>
             </Row>
             <Row className="form-row">
-              <Form.Group as={Col} md="4" controlId="validationFormikPassword">
+              <Form.Group as={Col} controlId="validationFormikBio" className="position-relative">
+                <Form.Label>Bio</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  name="bio"
+                  value={values.bio}
+                  onChange={handleChange}
+                  isInvalid={touched.bio && !!errors.bio}
+                />
+                <Form.Control.Feedback type="invalid" tooltip>{errors.bio}</Form.Control.Feedback>
+              </Form.Group>
+            </Row>
+            <Row className="form-row">
+              <Form.Group as={Col} controlId="validationFormikIdCardOrLicense" className="position-relative">
+                <Form.Label>National ID card or Driver's License</Form.Label>
+                <Form.Control
+                  type="file"
+                  name="idCardOrLicense"
+                  onChange={(event) => {
+                    setFieldValue('idCardOrLicense', event.target.files[0]);
+                  }}
+                  isInvalid={touched.idCardOrLicense && !!errors.idCardOrLicense}
+                />
+                <Form.Control.Feedback type="invalid" tooltip>{errors.idCardOrLicense}</Form.Control.Feedback>
+              </Form.Group>
+            </Row>
+            <Row className="form-row">
+              <Form.Group as={Col} controlId="validationFormikPassword" className="position-relative">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   type="password"
@@ -128,7 +160,7 @@ export default function SignUp() {
               </Form.Group>
             </Row>
             <Row className="form-row">
-              <Form.Group as={Col} md="4" controlId="validationFormikConfirmPassword">
+              <Form.Group as={Col} controlId="validationFormikConfirmPassword" className="position-relative">
                 <Form.Label>Confirm Password</Form.Label>
                 <Form.Control
                   type="password"
