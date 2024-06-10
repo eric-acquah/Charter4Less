@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row, Button, Container } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import ItemCardComponent from "../../components/ItemCardComponent";
 import "./RelatedItemsSection.css";
 

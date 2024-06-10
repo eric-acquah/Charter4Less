@@ -3,8 +3,8 @@ import Header from "../../components/ui/Header/Header";
 import Footer from "../../components/ui/Footer/FooterComponent";
 import CategoriesMain from "./CategoriesMain";
 
-import ImgPlaceholder from "../../assets/images/explore-image.jpeg";
-import ImgPlaceholder1 from "../../assets/images/thumbnail-1.jpg";
+// import ImgPlaceholder from "../../assets/images/explore-image.jpeg";
+// import ImgPlaceholder1 from "../../assets/images/thumbnail-1.jpg";
 // import ItemCardComponent from "../../components/ui/ItemCardComponent";
 
 // import useRetrieveItems from "../../hooks/useRetrieveItems";

@@ -64,16 +64,20 @@ export default function NavbarComponent() {
               <Nav className="mr-auto" style={{ marginRight: "1rem" }}>
                 <Link className="navlink" to="/howitworks">How It Works</Link>
               </Nav>
-              <Button
-                style={{ marginRight: "7px" }}
-                className="btn-action"
-                variant="outline-primary"
-              >
-                Log In
-              </Button>
-              <Button className="btn-action" variant="primary">
-                Sign Up
-              </Button>
+              <Link to='/login'>
+                <Button
+                  style={{ marginRight: "7px" }}
+                  className="btn-action"
+                  variant="outline-primary"
+                >
+                  Log In
+                </Button>
+              </Link>
+             <Link to='/signup'>
+                <Button className="btn-action" variant="primary">
+                  Sign Up
+                </Button>
+             </Link>
             </Col>
           </Row>
         </Navbar.Collapse>
