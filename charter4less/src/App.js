@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RatingProvider } from './context/RatingContext';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -60,9 +61,11 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="App">
+   <RatingProvider>
+     <div className="App">
       <RouterProvider router={router} />
     </div>
+   </RatingProvider>
   );
 }
 
