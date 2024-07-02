@@ -38,7 +38,7 @@
   font-weight: 500;
 }
 
-.searchbox-flex.search-box:focus {
+.searchbox-flex .search-box:focus {
   outline: none;
   background: none;
   border: none;
@@ -80,7 +80,7 @@
     background-color: #0C0C0C;
 }
 
-.searchbox-flex .search-btn-container .search-btn:active {
+.searchbox-flex.search-btn-container .search-btn:active {
     background-color: #0d6efd;
     border: 2px solid #0C0C0C;
 }

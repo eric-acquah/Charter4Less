@@ -8,7 +8,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 export default function SearchboxComponent({ placeholder = "Search", btnText = "Search" }) {
   return (
     <Form>
-      <div className="searchbox-flex">
+      <div id="search-box-flex-1" className="searchbox-flex">
         <div className="search-icon">
           <FontAwesomeIcon className="icon" name="search" style={{height: "1.5rem"}} icon={faSearch} />
         </div>

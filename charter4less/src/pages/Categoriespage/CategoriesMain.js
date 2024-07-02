@@ -135,6 +135,7 @@ export default function CategoriesMain({ cardData }) {
             {modifiedCardData.length < 1 ? (
               <Container className="msg-container">
                 <h2>No Items To display Yet</h2>
+                <small>Try Refreshing the page..</small>
               </Container>
             ) : (
               <ItemCardComponent cardData={modifiedCardData} />

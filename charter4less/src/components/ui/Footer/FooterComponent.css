@@ -63,3 +63,13 @@
     font-size: 1.5rem;
     font-weight: 500;
 }
+
+.footer-contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+
+.footer-contact-info li {
+    margin-bottom: 1rem;
+}

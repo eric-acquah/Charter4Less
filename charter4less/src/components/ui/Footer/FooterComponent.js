@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./FooterComponent.css";
 import logo from "../../../assets/images/logo-1.png";
 import getYear from "../../../utils/dates";
@@ -34,29 +35,25 @@ export default function FooterComponent() {
         <Row>
           <Col>
             <FooterHeader text="About Us" />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            maximus placerat laoreet. Nunc pretium et magna eu interdum. Duis
-            risus odio, malesuada vel ullamcorper non, luctus at nisl. Morbi
-            facilisis fermentum risus. Fusce fermentum erat
+            At Charter4Less, our mission is to bring the community closer by offering a platform where you can easily share the items you own to earn extra income or find exactly what you need for that special occasion. Join us in our mission to create a sustainable, connected community. <Link to="/aboutus">[Learn More]</Link>
             <img src={logo} alt="logo" className="footer-logo" />
           </Col>
           <Col>
             <FooterHeader text="Contact Info" />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            maximus placerat laoreet. Nunc pretium et magna eu interdum. Duis
-            risus odio, malesuada vel ullamcorper non, luctus at nisl.
+            <ul className="footer-contact-info">
+              <li>Email: @charter4less.com</li>
+              <li>Phone: (123) 456-7890</li>
+              <li>Address: 29 OBONU ST GA-566-8938 Accra-Ghana.</li>
+              <li>Follow Us: Facebook, Twitter, Instagram, LinkedIn</li>
+            </ul>
           </Col>
           <Col>
             <FooterHeader text="Address" />
-            malesuada vel ullamcorper non, luctus at nisl. Morbi facilisis
-            fermentum risus. Fusce fermentum erat elementum, auctor ligula a,
-            cursus diam. Nullam volutpat mi velit. Proin ut euismod orci.
+            29 OBONU ST Dansoman Control Accra, Ghana
           </Col>
           <Col>
             <FooterHeader text="Newsletter" />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            maximus placerat laoreet. Nunc pretium et magna eu interdum. Duis
-            risus odio, malesuada vel ullamcorper
+            Stay updated with the latest offers and news. Subscribe to our newsletter!
             <Form className="footer-email">
               <Form.Control placeholder="Email" />
             </Form>

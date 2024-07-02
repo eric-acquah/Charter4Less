@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 import "./NavbarComponent.css";
+import NavDropDown from "../../NavDropDown";
 
 export default function NavbarComponent() {
   return (
@@ -34,9 +35,13 @@ export default function NavbarComponent() {
           />
       </Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      {/* <NavDropDown /> */}
       <Row>
         <Navbar.Collapse id="basic-navbar-nav">
           <Row>
+            <Col xs md="auto">
+              <NavDropDown />
+            </Col>
             <Col xs md="auto">
               <Form>
                 <InputGroup>

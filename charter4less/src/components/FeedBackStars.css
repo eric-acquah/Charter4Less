@@ -1,0 +1,13 @@
+/* === Review stars === */
+
+.rate-stars-container {
+    position: relative;
+    padding: 0.5rem 1rem;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    bottom: 1rem;
+}
+
+.rate-stars {
+    font-size: 1.5rem;
+}

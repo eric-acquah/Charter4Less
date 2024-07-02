@@ -236,10 +236,13 @@ export default function ListItemSection() {
                       {formSubmitted ? (
                         <span className="save-spinner">
                           <Spinner
-                            aria-hidden="true"
-                            className="spinner-element"
+                            // aria-hidden="true"
+                            className="spinner-element me-1 "
                             animation="border"
                             role="status"
+                            size="sm"
+                            variant="light"
+                            style={{width: "0.5rem", height: "0.5rem", fontSize: "1.5rem"}}
                           />{" "}
                           Saving...
                         </span>

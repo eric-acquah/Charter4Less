@@ -58,7 +58,7 @@
     width: 70%;
 }
 
-.form-submit-btn {
+.form-sections-row2-col3 .form-submit-btn {
     width: 21%;
     align-self: flex-end;
     margin-bottom: 8px;
@@ -71,7 +71,7 @@
 
 /* === Spinner ==== */
 
-.save-spinner {
+.form-submit-btn .save-spinner {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -79,9 +79,9 @@
     width: 100%;
 }
 
-.save-spinner .spinner-element {
-    width: 0.70rem;
-    height: 0.70rem;
-    font-size: 10px;
+.form-submit-btn .save-spinner .spinner-element {
+    /* width: 0.5rem;
+    height: 0.5rem; */
+    /* font-size: 10px; */
     /* margin-right: 1px; */
 }

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as Rastar } from "@fortawesome/free-regular-svg-icons";
+import useRetrieveFeedback from "../../hooks/useRetrieveFeedback";
 
 import "./ReviewSection.css";
 import "swiper/css"; // core Swiper
@@ -65,6 +66,7 @@ const reviewsData = [
 ];
 
 export function ReviewStars({ starCount = 1 }) {
+
   return (
     <>
       {Array(starCount)
@@ -102,13 +104,19 @@ function ReviewCard({ reviewsData = [] }) {
                 <ReviewStars starCount={review.starCount} />
               </Card.Title>
               <Card.Body className="review-card">
-                <Card.Img
+                { review.reviwerPic ? 
+                  <Card.Img
                   className="reviewer-img"
                   src={review.reviwerPic}
                   alt="review card"
-                />
+                /> : <Card.Img
+                className="reviewer-img"
+                src={profile}
+                alt="review card"
+              />
+                }
                 <Card.Text className="reviewer-name">
-                  {review.reviewerName}
+                  {review.name}
                 </Card.Text>
                 <hr />
                 <Card.Text className="reviewer-msg">{review.review}</Card.Text>
@@ -122,6 +130,8 @@ function ReviewCard({ reviewsData = [] }) {
 }
 
 export default function ReviewSection() {
+  const { feedback } = useRetrieveFeedback();
+
   return (
     <section className="review-section">
       <Container>
@@ -132,7 +142,7 @@ export default function ReviewSection() {
         </Row>
         <Row>
           <Col>
-            <ReviewCard reviewsData={reviewsData} />
+            <ReviewCard reviewsData={feedback ? feedback : reviewsData} />
           </Col>
         </Row>
       </Container>
